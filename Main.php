@@ -95,3 +95,25 @@ function registration_validation( $username, $password, $email, $website, $first
         }
     }
 }
+
+// Below is the complete registration function whic will accept an array of user data
+function complete_registration() {
+    global $reg_errors, $username, $password, $email, $website, $first_name, $last_name, $nickname, $bio;
+    if ( 1 > count($reg_errors->get_error_messages())) {
+        $userdata = array(
+            'user_login'    => $username,
+            'user_email'    => $email,
+            'user_pass'     => $password,
+            'user_url'      => $website,
+            'first_name'    => $first_name,
+            'last_name'     => $last_name,
+            'nickname'      => $nickname,
+            'description'   => $bio,
+        );
+        $user = wp_insert_user( $userdata );
+        echo 'Registration Complete. Go to <a href="' . get_site_url() . '/wp-login.php">login page</a>.'; 
+    }
+}
+
+// Below is the custom registration function that puts all the function above into use
+
