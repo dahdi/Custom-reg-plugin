@@ -165,3 +165,15 @@ function custom_registration_function() {
         $bio
     );
 }
+
+//register a new shortcode: [cr_custom_reg]
+add_shortcode('cr_custom_reg', 'custom_reg_plugin_shortcode');
+
+// the callback function that will replace [book]
+function custom_reg_plugin_shortcode() {
+    ob_start();
+    custom_registration_function();
+    return ob_get_clean();
+}
+
+?>
