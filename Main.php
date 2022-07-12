@@ -1,7 +1,7 @@
 <?php
 /*
-    Plugin Name | Custom Reg UWD
-    Decription  | Custom registration form made by Henry Chard UWD
+    Plugin Name | Custom Reg 
+    Decription  | Custom registration form made by Henry Chard 
     Version     | 1.0
     Author      | Henry Chard
     Business    | Universal Web Design
